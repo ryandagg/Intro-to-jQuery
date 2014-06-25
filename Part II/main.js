@@ -2,6 +2,10 @@ $("h2").append("!")
 
 $(document).ready(function(){
 	$("a").click(function(){
-		return confirm("Some things, once seen, can not be unseen. \nProceed?")
+		console.log($(this))
+		if(!(confirm("Some things, once seen, can not be unseen. \nProceed?"))){
+			$(this).contents().unwrap()
+			return false;
+		}
 	})
 })
